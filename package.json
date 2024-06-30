@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "npm run delete-dist && tsc -p tsconfig.web.json && node ./scripts/rename-dist-files.js",
+    "start": "npm run delete-dist && tsc -p tsconfig.web.json && node ./scripts/rename-dist-files.js && node ./dist/index.js",
     "build:desktop": "npm run delete-dist && tsc -p tsconfig.desktop.json &&  node ./scripts/rename-dist-files.js",
     "delete-dist": "node ./scripts/delete-dist.js",
     "test": "ts-node"
@@ -15,10 +15,11 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "mysql": "^2.18.1",
-    "fs-extra": "^11.1.1"  
+    "fs-extra": "^11.1.1",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "@types/mysql": "^2.15.26",
     "@types/node": "^20.14.9",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
